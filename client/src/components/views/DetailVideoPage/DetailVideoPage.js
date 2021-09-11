@@ -42,17 +42,28 @@ function DetailVideoPage(props) {
 	if (Video.writer) {
 		return (
 			<Row>
-				<Col lg={18} xs={24}>
+				<Col lg={24} xs={24}>
+					{/*영상 2개 재생 할부분
+					todo : 영상 2개 */}
 					<div
 						className="postPage"
 						style={{ width: '100%', padding: '3rem 4em' }}
 					>
 						<video
-							style={{ width: '100%' }}
+							style={{ width: '50%' }}
 							src={`http://localhost:5000/${Video.filePath}`}
 							controls
 						></video>
-
+						<video
+							style={{ width: '50%' }}
+							src={`http://localhost:5000/${Video.filePath}`}
+							controls
+						></video>
+					</div>
+				</Col>
+				<Col lg={18} xs={24}>
+					{/*subscribe, comment부분 */}
+					<div style={{ width: '100%', padding: '3rem 4em' }}>
 						<List.Item
 							actions={[
 								<LikeDislikes
@@ -81,7 +92,9 @@ function DetailVideoPage(props) {
 						/>
 					</div>
 				</Col>
+
 				<Col lg={6} xs={24}>
+					{/*사이드 비디오 */}
 					<SideVideo />
 				</Col>
 			</Row>
