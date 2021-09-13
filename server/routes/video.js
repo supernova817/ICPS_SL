@@ -31,6 +31,7 @@ var upload = multer({ storage: storage }).single("file")
 //=================================
 
 
+// 파일 req 받아서 보내줌
 router.post("/uploadfiles", (req, res) => {
 
     upload(req, res, err => {
